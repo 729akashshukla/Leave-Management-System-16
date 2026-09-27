@@ -138,6 +138,7 @@ down further (currently `cors()` allows all origins for simplicity — fine for 
 - Converting the codebase from CommonJS (`require`/`module.exports`) to ES6 modules
   (`import`/`export`).
 - Writing this README and the deployment configs.
+- Generating the local setup instructions and frontend commands (e.g., `cp .env.example .env`, `npm install`, `npm run dev`).
 
 **Things AI got wrong / that I changed:**
 
