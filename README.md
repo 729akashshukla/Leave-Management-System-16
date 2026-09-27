@@ -128,7 +128,7 @@ down further (currently `cors()` allows all origins for simplicity — fine for 
 
 ## AI Tool Usage Disclosure
 
-**Tool used:** Claude (Claude Code / claude.ai)
+**Tools used:** Claude Code, Codex, and Kiro
 
 **What it was used for:**
 - Scaffolding the full Express backend (models, controllers, routes, middleware) and the
@@ -163,4 +163,13 @@ down further (currently `cors()` allows all origins for simplicity — fine for 
    in `backend/utils/dateUtils.js` that splits `"YYYY-MM-DD"` and constructs the Date with
    `new Date(year, month - 1, day)`, which always gives local midnight on the intended
    calendar date regardless of the server's timezone.
+
+3. **Missing form validation for passwords and emails.**
+   The initial generated code lacked strict frontend and backend validation for user credentials. I manually added strict regex pattern matching for email domains and minimum character limits for passwords to properly secure the signup flow.
+
+4. **Past dates could be selected for new leave requests.**
+   The generated frontend form allowed employees to request leave for days that had already passed. I fixed this by dynamically injecting today's date into the `min` attribute of the Start Date input (`min={new Date().toISOString().split("T")[0]}`).
+
+5. **Deployment IP Whitelisting and Routing issues.**
+   During deployment, the AI didn't automatically account for MongoDB Atlas's strict IP access list, which blocked the Render backend. I manually whitelisted `0.0.0.0/0` in Atlas. Additionally, I had to configure the Vercel frontend environment variables (`VITE_API_URL`) to explicitly append `/api` to correctly map to the backend's Express router setup.
 
