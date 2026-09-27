@@ -100,29 +100,13 @@ Runs on `http://localhost:5173`.
 
 ## Deployment
 
-### 1. Database — MongoDB Atlas
-1. Create a free cluster at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas).
-2. Database Access → add a user with a password.
-3. Network Access → allow access from anywhere (`0.0.0.0/0`) for simplicity.
-4. Copy the connection string → this is your `MONGO_URI`.
+The application is deployed and live on the internet:
 
-### 2. Backend — Render
-1. Push this repo to GitHub.
-2. On [render.com](https://render.com) → New → Web Service → connect the repo, set **root directory to `backend`**.
-3. Build command: `npm install`, Start command: `npm start`.
-4. Add environment variables: `MONGO_URI`, `JWT_SECRET`, `PORT=5000`.
-5. Deploy. Note the resulting URL, e.g. `https://leave-app-backend.onrender.com`.
+- **Database:** MongoDB Atlas
+- **Backend API:** Render Web Service (`https://leave-management-system-16.onrender.com`)
+- **Frontend App:** Vercel (`https://leave-management-system-16.vercel.app`)
 
-*(A `render.yaml` is included in `backend/` if you prefer Render's Blueprint deploy.)*
-
-### 3. Frontend — Vercel
-1. On [vercel.com](https://vercel.com) → New Project → import the repo, set **root directory to `frontend`**.
-2. Framework preset: Vite.
-3. Add environment variable: `VITE_API_URL=https://leave-management-system-16.onrender.com/api` (exactly like this, do not forget the `/api`).
-4. Deploy.
-
-Once both are live, update the **Live Links** section above and update CORS if you lock it
-down further (currently `cors()` allows all origins for simplicity — fine for a free-tier demo).
+*(Note: The Render backend runs on a free tier and sleeps after 15 minutes of inactivity. It may take 30-50 seconds to respond to the very first request if it is waking up).*
 
 ---
 
