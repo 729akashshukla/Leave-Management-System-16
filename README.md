@@ -118,7 +118,7 @@ Runs on `http://localhost:5173`.
 ### 3. Frontend — Vercel
 1. On [vercel.com](https://vercel.com) → New Project → import the repo, set **root directory to `frontend`**.
 2. Framework preset: Vite.
-3. Add environment variable: `VITE_API_URL=https://<your-render-backend-url>/api`.
+3. Add environment variable: `VITE_API_URL=https://leave-management-system-16.onrender.com/api` (exactly like this, do not forget the `/api`).
 4. Deploy.
 
 Once both are live, update the **Live Links** section above and update CORS if you lock it
