@@ -9,9 +9,9 @@ and balances are tracked automatically.
 
 ## Live Links
 
-- **Frontend (Vercel):** `<add after deploying>`
-- **Backend API (Render):** `<add after deploying>`
-- **Repo:** `<add your GitHub URL>`
+- **Frontend (Vercel):** `https://leave-management-system-16.vercel.app`
+- **Backend API (Render):** `https://leave-management-system-16.onrender.com`
+- **Repo:** `https://github.com/729akashshukla/Leave-Management-System-16`
 
 ---
 
