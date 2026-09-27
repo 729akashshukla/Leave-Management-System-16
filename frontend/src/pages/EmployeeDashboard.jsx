@@ -68,6 +68,7 @@ export default function EmployeeDashboard() {
               <input
                 type="date"
                 required
+                min={new Date().toISOString().split("T")[0]}
                 value={form.startDate}
                 onChange={(e) => setForm({ ...form, startDate: e.target.value })}
               />
